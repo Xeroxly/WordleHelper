@@ -8,9 +8,15 @@ const Letter = (props) => {
     if (count === 0) {
       setBackgroundColor("Gray");
       setCount(count + 1);
+      props.setAlphabet(
+        props.alphabet.filter((letter) => letter !== props.letter)
+      );
     } else if (count === 1) {
       setBackgroundColor("Yellow");
       setCount(count + 1);
+      if (!props.alphabet.includes(props.letter)) {
+        props.setAlphabet(props.alphabet.concat(props.letter));
+      }
     } else if (count === 2) {
       setBackgroundColor("Lime");
       setCount(0);
