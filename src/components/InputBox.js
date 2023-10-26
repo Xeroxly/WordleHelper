@@ -3,7 +3,7 @@ import { useState } from "react";
 
 const InputBox = (props) => {
   const [input, setInput] = useState("");
-  const [wordsList, setWordsList] = useState([]);
+  const [wordsList, setWordsList] = useState(["words"]); // added words for testing, should be useState([])
 
   const submit = (e) => {
     e.preventDefault();

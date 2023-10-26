@@ -18,11 +18,31 @@ const Word = (props) => {
     <>
       <div className="Word">
         {" "}
-        <Letter letter={props.word[0].toUpperCase()} />{" "}
-        <Letter letter={props.word[1].toUpperCase()} />{" "}
-        <Letter letter={props.word[2].toUpperCase()} />{" "}
-        <Letter letter={props.word[3].toUpperCase()} />{" "}
-        <Letter letter={props.word[4].toUpperCase()} />
+        <Letter
+          letter={props.word[0].toUpperCase()}
+          alphabet={props.alphabet}
+          setAlphabet={props.setAlphabet}
+        />{" "}
+        <Letter
+          letter={props.word[1].toUpperCase()}
+          alphabet={props.alphabet}
+          setAlphabet={props.setAlphabet}
+        />{" "}
+        <Letter
+          letter={props.word[2].toUpperCase()}
+          alphabet={props.alphabet}
+          setAlphabet={props.setAlphabet}
+        />{" "}
+        <Letter
+          letter={props.word[3].toUpperCase()}
+          alphabet={props.alphabet}
+          setAlphabet={props.setAlphabet}
+        />{" "}
+        <Letter
+          letter={props.word[4].toUpperCase()}
+          alphabet={props.alphabet}
+          setAlphabet={props.setAlphabet}
+        />
       </div>
       <br></br>
     </>
