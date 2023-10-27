@@ -1,28 +1,48 @@
 const Guesses = (props) => {
-  const guessList = [];
-  let guess = "";
+  const guessArray = [];
 
-  for (let a = 0; a < props.alphabet.length; a++) {
-    for (let b = 0; b < props.alphabet.length; b++) {
-      for (let c = 0; c < props.alphabet.length; c++) {
-        for (let d = 0; d < props.alphabet.length; d++) {
-          for (let e = 0; e < props.alphabet.length; e++) {
-            guess += props.alphabet[a];
-            guess += props.alphabet[b];
-            guess += props.alphabet[c];
-            guess += props.alphabet[d];
-            guess += props.alphabet[e];
-            guessList.push(guess);
-            guess = "";
+  const makeGuessArray = (guessLength, alphabet, greenGuesses, guessArray) => {
+    const newGuessArray = [];
+
+    if (guessLength === 5) {
+      return guessArray;
+    } else {
+      for (let i = 0; i < guessArray.length; i++) {
+        if (greenGuesses[guessLength] !== "_") {
+          newGuessArray.push(guessArray[i] + greenGuesses[guessLength]);
+        } else {
+          for (let j = 0; j < alphabet.length; j++) {
+            newGuessArray.push(guessArray[i] + alphabet[j]);
           }
         }
       }
     }
+    return makeGuessArray(
+      guessLength + 1,
+      alphabet,
+      greenGuesses,
+      newGuessArray
+    );
+  };
+
+  if (props.greenGuesses[0] !== "_") {
+    guessArray.push(props.greenGuesses[0]);
+  } else {
+    for (let j = 0; j < props.alphabet.length; j++) {
+      guessArray.push(props.alphabet[j]);
+    }
   }
+
+  const completedGuessArray = makeGuessArray(
+    1,
+    props.alphabet,
+    props.greenGuesses,
+    guessArray
+  );
 
   return (
     <div>
-      {guessList.map((guess) => (
+      {completedGuessArray.map((guess) => (
         <div>{guess} </div>
       ))}
     </div>
