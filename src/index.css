@@ -24,7 +24,16 @@ input[type="submit"] {
   font-size: 150%;
 }
 
-.Alphabet {
+.Guesses {
   text-align: center;
   font-size: 200%;
+}
+
+.GreenGuesses {
+  text-align: center;
+  font-size: 300%;
+}
+
+.LoadButton {
+  text-align: center;
 }
