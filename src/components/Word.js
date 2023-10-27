@@ -1,6 +1,8 @@
 import Letter from "./Letter";
 
 const Word = (props) => {
+  const letterPosition = 0;
+
   if (props.word.length === 0) {
     return;
   } else if (props.word.length !== 5) {
@@ -22,26 +24,46 @@ const Word = (props) => {
           letter={props.word[0].toUpperCase()}
           alphabet={props.alphabet}
           setAlphabet={props.setAlphabet}
+          position={letterPosition}
+          greenGuesses={props.greenGuesses}
+          setGreenGuesses={props.setGreenGuesses}
+          key={props.word[0].toUpperCase()}
         />{" "}
         <Letter
           letter={props.word[1].toUpperCase()}
           alphabet={props.alphabet}
           setAlphabet={props.setAlphabet}
+          position={letterPosition + 1}
+          greenGuesses={props.greenGuesses}
+          setGreenGuesses={props.setGreenGuesses}
+          key={props.word[1].toUpperCase()}
         />{" "}
         <Letter
           letter={props.word[2].toUpperCase()}
           alphabet={props.alphabet}
           setAlphabet={props.setAlphabet}
+          position={letterPosition + 2}
+          greenGuesses={props.greenGuesses}
+          setGreenGuesses={props.setGreenGuesses}
+          key={props.word[2].toUpperCase()}
         />{" "}
         <Letter
           letter={props.word[3].toUpperCase()}
           alphabet={props.alphabet}
           setAlphabet={props.setAlphabet}
+          position={letterPosition + 3}
+          greenGuesses={props.greenGuesses}
+          setGreenGuesses={props.setGreenGuesses}
+          key={props.word[3].toUpperCase()}
         />{" "}
         <Letter
           letter={props.word[4].toUpperCase()}
           alphabet={props.alphabet}
           setAlphabet={props.setAlphabet}
+          position={letterPosition + 4}
+          greenGuesses={props.greenGuesses}
+          setGreenGuesses={props.setGreenGuesses}
+          key={props.word[4].toUpperCase()}
         />
       </div>
       <br></br>
