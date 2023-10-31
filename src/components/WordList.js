@@ -33,8 +33,8 @@ const WordList = (props) => {
   ]);
 
   const [greenGuesses, setGreenGuesses] = useState(["_", "_", "_", "_", "_"]);
-  const [load, setLoad] = useState(false);
-  const [buttonText, setButtonText] = useState("Load Guesses");
+  const [yellowLetters, setYellowLetters] = useState([]);
+  const [yellowData, setYellowData] = useState([]);
 
   return (
     <>
@@ -47,6 +47,10 @@ const WordList = (props) => {
             setAlphabet={setAlphabet}
             greenGuesses={greenGuesses}
             setGreenGuesses={setGreenGuesses}
+            yellowLetters={yellowLetters}
+            setYellowLetters={setYellowLetters}
+            yellowData={yellowData}
+            setYellowData={setYellowData}
           />
         ))}
       </div>
@@ -59,18 +63,27 @@ const WordList = (props) => {
       <div className="LoadButton">
         <input
           type="submit"
-          value={buttonText}
+          value={props.buttonText}
           onClick={() => {
-            setLoad(!load);
-            setButtonText(
-              buttonText === "Load Guesses" ? "Hide Guesses" : "Load Guesses"
+            props.setLoad(!props.load);
+            props.setButtonText(
+              props.buttonText === "Load Guesses"
+                ? "Hide Guesses"
+                : "Load Guesses"
             );
           }}
         />
       </div>
       <br></br>
       <div className="Guesses">
-        {load && <Guesses alphabet={alphabet} greenGuesses={greenGuesses} />}
+        {props.load && (
+          <Guesses
+            alphabet={alphabet}
+            greenGuesses={greenGuesses}
+            yellowLetters={yellowLetters}
+            yellowData={yellowData}
+          />
+        )}
       </div>
     </>
   );

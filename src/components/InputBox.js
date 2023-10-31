@@ -3,13 +3,17 @@ import { useState } from "react";
 
 const InputBox = (props) => {
   const [input, setInput] = useState("");
-  const [wordsList, setWordsList] = useState([]); // added words for testing, should be useState([])
+  const [wordsList, setWordsList] = useState([]);
+  const [load, setLoad] = useState(false);
+  const [buttonText, setButtonText] = useState("Load Guesses");
 
   const submit = (e) => {
     e.preventDefault();
     wordsList.push(input);
     setWordsList(wordsList);
     setInput("");
+    setLoad(false);
+    setButtonText("Load Guesses");
   };
 
   return (
@@ -24,7 +28,14 @@ const InputBox = (props) => {
         <input type="submit" value="Submit" />
       </form>
       <br></br>
-      <WordList className="WordList" words={wordsList} />
+      <WordList
+        className="WordList"
+        words={wordsList}
+        load={load}
+        setLoad={setLoad}
+        buttonText={buttonText}
+        setButtonText={setButtonText}
+      />
     </>
   );
 };

@@ -28,6 +28,10 @@ const Word = (props) => {
           greenGuesses={props.greenGuesses}
           setGreenGuesses={props.setGreenGuesses}
           key={props.word[0].toUpperCase()}
+          yellowLetters={props.yellowLetters}
+          setYellowLetters={props.setYellowLetters}
+          yellowData={props.yellowData}
+          setYellowData={props.setYellowData}
         />{" "}
         <Letter
           letter={props.word[1].toUpperCase()}
@@ -37,6 +41,10 @@ const Word = (props) => {
           greenGuesses={props.greenGuesses}
           setGreenGuesses={props.setGreenGuesses}
           key={props.word[1].toUpperCase()}
+          yellowLetters={props.yellowLetters}
+          setYellowLetters={props.setYellowLetters}
+          yellowData={props.yellowData}
+          setYellowData={props.setYellowData}
         />{" "}
         <Letter
           letter={props.word[2].toUpperCase()}
@@ -46,6 +54,10 @@ const Word = (props) => {
           greenGuesses={props.greenGuesses}
           setGreenGuesses={props.setGreenGuesses}
           key={props.word[2].toUpperCase()}
+          yellowLetters={props.yellowLetters}
+          setYellowLetters={props.setYellowLetters}
+          yellowData={props.yellowData}
+          setYellowData={props.setYellowData}
         />{" "}
         <Letter
           letter={props.word[3].toUpperCase()}
@@ -55,6 +67,10 @@ const Word = (props) => {
           greenGuesses={props.greenGuesses}
           setGreenGuesses={props.setGreenGuesses}
           key={props.word[3].toUpperCase()}
+          yellowLetters={props.yellowLetters}
+          setYellowLetters={props.setYellowLetters}
+          yellowData={props.yellowData}
+          setYellowData={props.setYellowData}
         />{" "}
         <Letter
           letter={props.word[4].toUpperCase()}
@@ -64,6 +80,10 @@ const Word = (props) => {
           greenGuesses={props.greenGuesses}
           setGreenGuesses={props.setGreenGuesses}
           key={props.word[4].toUpperCase()}
+          yellowLetters={props.yellowLetters}
+          setYellowLetters={props.setYellowLetters}
+          yellowData={props.yellowData}
+          setYellowData={props.setYellowData}
         />
       </div>
       <br></br>

@@ -21,6 +21,29 @@ const Letter = (props) => {
       if (!props.alphabet.includes(props.letter)) {
         props.setAlphabet(props.alphabet.concat(props.letter));
       }
+      if (!props.yellowLetters.includes(props.letter)) {
+        const allPositions = [0, 1, 2, 3, 4];
+        props.setYellowLetters(props.yellowLetters.concat(props.letter));
+        props.yellowData.push(
+          allPositions.filter(
+            (position) =>
+              position !== props.position &&
+              props.greenGuesses[position] === "_"
+          )
+        );
+        props.setYellowData(props.yellowData);
+      } else {
+        const relaventIndex = props.yellowLetters.indexOf(props.letter);
+        props.setYellowData(
+          props.yellowData.toSpliced(
+            relaventIndex,
+            1,
+            props.yellowData[relaventIndex].filter(
+              (position) => position !== props.position
+            )
+          )
+        );
+      }
       setCount(count + 1);
     } else if (count === 2) {
       setBackgroundColor("Lime");
@@ -28,8 +51,24 @@ const Letter = (props) => {
         props.setGreenGuesses(
           props.greenGuesses.toSpliced(props.position, 1, props.letter)
         );
+        if (props.yellowLetters.includes(props.letter)) {
+          const newYellowData = [];
+          for (let i = 0; i < props.yellowData.length; i++) {
+            newYellowData.push(
+              props.yellowData[i].filter(
+                (position) => position !== props.position
+              )
+            );
+          }
+          const relaventIndex = props.yellowLetters.indexOf(props.letter);
+          props.setYellowData(newYellowData.toSpliced(relaventIndex, 1));
+          props.setYellowLetters(
+            props.yellowLetters.toSpliced(relaventIndex, 1)
+          );
+        }
       }
-      setCount(0);
+      // setCount(0);
+      // Temporarily disable to correct Yellow Guess reset issue
     }
   };
 
