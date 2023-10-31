@@ -7,6 +7,7 @@ const InputBox = (props) => {
   const [load, setLoad] = useState(false);
   const [buttonText, setButtonText] = useState("Load Guesses");
 
+  // Hides guess when a new word is added to prevent lag
   const submit = (e) => {
     e.preventDefault();
     wordsList.push(input);

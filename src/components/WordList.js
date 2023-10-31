@@ -54,12 +54,14 @@ const WordList = (props) => {
           />
         ))}
       </div>
+      {/* Displays current state of greenGuesses */}
       <div className="GreenGuesses">
         {greenGuesses.map((letter) => (
           <span>{letter} </span>
         ))}
       </div>
       <br></br>
+      {/* Displays button to load guesses based off of current information */}
       <div className="LoadButton">
         <input
           type="submit"
@@ -75,6 +77,7 @@ const WordList = (props) => {
         />
       </div>
       <br></br>
+      {/* Loads the generated and filtered guesses from words gathered above */}
       <div className="Guesses">
         {props.load && (
           <Guesses
