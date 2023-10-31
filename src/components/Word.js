@@ -3,8 +3,10 @@ import Letter from "./Letter";
 const Word = (props) => {
   const letterPosition = 0;
 
+  // Doesn't show empty boxes
   if (props.word.length === 0) {
     return;
+    // Words must be 5 letters exactly
   } else if (props.word.length !== 5) {
     return (
       <>
