@@ -43,6 +43,7 @@ const Guesses = (props) => {
     guessArray
   );
 
+  //Define recursive function to filter generated guesses by the info in YellowLetters and YellowData
   const filterGuessArray = (
     unfilteredGuessArray,
     yellowLetters,
@@ -112,6 +113,7 @@ const Guesses = (props) => {
     }
   };
 
+  // Call function to filter original array with info from yellow letters
   const filteredGuessArray = filterGuessArray(
     unfilteredGuessArray,
     props.yellowLetters,
