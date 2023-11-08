@@ -1,3 +1,5 @@
+import validGuesses from "../validGuesses.js";
+
 const Guesses = (props) => {
   const guessArray = [];
 
@@ -121,9 +123,17 @@ const Guesses = (props) => {
     0
   );
 
+  const completedGuesses = [];
+  for (let i = 0; i < filteredGuessArray.length; i++) {
+    for (let j = 0; j < validGuesses.length; j++) {
+      if (filteredGuessArray[i] === validGuesses[j])
+        completedGuesses.push(filteredGuessArray[i]);
+    }
+  }
+
   return (
     <div>
-      {filteredGuessArray.map((guess) => (
+      {completedGuesses.map((guess) => (
         <div>{guess} </div>
       ))}
     </div>
