@@ -24,9 +24,18 @@ const InputBox = (props) => {
           type="text"
           placeholder="Wordle guess"
           value={input}
-          onChange={(e) => setInput(e.target.value)}
+          onChange={(e) => (
+            setInput(e.target.value),
+            setLoad(false),
+            setButtonText("Load Guesses")
+          )}
         />
-        <input type="submit" value="Submit" />
+        <input type="submit" value="Submit" />{" "}
+        <input
+          type="submit"
+          value="NEW GAME"
+          onClick={() => window.location.reload(false)}
+        />
       </form>
       <br></br>
       <WordList
