@@ -30,7 +30,8 @@ const InputBox = (props) => {
             setButtonText("Load Guesses")
           )}
         />
-        <input type="submit" value="Submit" />{" "}
+        <input type="submit" value="Submit" />
+        {"  "}
         <input
           type="submit"
           value="NEW GAME"
